@@ -1,4 +1,4 @@
-﻿/* =============================================
+/* =============================================
    FORCE FORTITUDE - MAIN STYLESHEET
    ============================================= */
 
@@ -830,6 +830,31 @@ ul { list-style: none; }
   .cta-actions { justify-content: center; }
 }
 
+.icon-gold { background: rgba(234, 179, 8, 0.12); color: #eab308; border: 1px solid rgba(234, 179, 8, 0.2); }
+
+.forensic-callout {
+  background: rgba(234, 179, 8, 0.04);
+  border: 1px solid rgba(234, 179, 8, 0.2);
+  border-left: 4px solid #eab308;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+.forensic-callout h4 {
+  color: #eab308;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.forensic-callout p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
 /* ---------- ANIMATIONS ---------- */
 .fade-in {
   opacity: 0;
@@ -837,3 +862,4 @@ ul { list-style: none; }
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
+
