@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Products | Force Fortitude - Fortive Scanner and Fortive Network</title>
+  <meta name="description" content="Explore the Fortive Suite — Fortive Scanner (external pen testing) and Fortive Network (internal pen testing) — AI-powered security tools built by Force Fortitude."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <style>
+    .page-hero { padding: calc(var(--nav-height) + 5rem) 0 5rem; background: var(--bg-secondary); position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(0,245,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,245,255,0.03) 1px, transparent 1px); background-size: 60px 60px; }
+    .page-hero-content { position: relative; text-align: center; }
+    .page-hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; }
+    .page-hero p { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.7; }
+    .product-detail { padding: 6rem 0; }
+    .product-detail:nth-child(even) { background: var(--bg-secondary); }
+    .product-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .product-detail:nth-child(even) .product-detail-grid { direction: rtl; }
+    .product-detail:nth-child(even) .product-detail-text { direction: ltr; }
+    .product-detail:nth-child(even) .product-visual { direction: ltr; }
+    .product-detail-text .product-label { display: inline-block; padding: 0.3rem 0.85rem; border-radius: 100px; font-size: 0.78rem; font-family: 'JetBrains Mono', monospace; margin-bottom: 1rem; }
+    .label-cyan { background: rgba(0,245,255,0.1); color: var(--accent-cyan); border: 1px solid rgba(0,245,255,0.2); }
+    .label-purple { background: rgba(139,92,246,0.1); color: var(--accent-purple); border: 1px solid rgba(139,92,246,0.2); }
+    .product-detail-text h2 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; }
+    .product-detail-text p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; }
+    .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin: 1.5rem 0 2rem; }
+    .feature-chip { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 0.6rem 0.85rem; font-size: 0.82rem; display: flex; align-items: center; gap: 0.5rem; color: var(--text-secondary); }
+    .feature-chip svg { width: 14px; height: 14px; flex-shrink: 0; }
+    .product-visual { position: relative; }
+    .product-screenshot { background: var(--bg-terminal); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .product-ss-header { background: #0a1628; padding: 0.75rem 1rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid rgba(0,245,255,0.08); }
+    .product-ss-title { color: var(--text-muted); font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; margin-left: auto; margin-right: auto; }
+    .product-ss-body { padding: 1.5rem; }
+    .scan-result { display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 0.75rem; border-radius: 6px; margin-bottom: 0.5rem; }
+    .scan-result.crit { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.15); }
+    .scan-result.high { background: rgba(249,115,22,0.08); border: 1px solid rgba(249,115,22,0.15); }
+    .scan-result.med { background: rgba(234,179,8,0.08); border: 1px solid rgba(234,179,8,0.15); }
+    .scan-result.low { background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.15); }
+    .scan-name { font-size: 0.82rem; font-family: 'JetBrains Mono', monospace; }
+    .scan-sev { font-size: 0.72rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 4px; }
+    .sev-crit { background: rgba(239,68,68,0.2); color: #f87171; }
+    .sev-high { background: rgba(249,115,22,0.2); color: #fb923c; }
+    .sev-med { background: rgba(234,179,8,0.2); color: #fbbf24; }
+    .sev-low { background: rgba(16,185,129,0.2); color: #34d399; }
+    .scan-score { font-size: 0.8rem; font-family: 'JetBrains Mono', monospace; color: var(--text-muted); }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 4rem 0; }
+    .comparison-table th, .comparison-table td { padding: 1rem 1.5rem; text-align: left; border-bottom: 1px solid var(--border); }
+    .comparison-table th { background: var(--bg-card); color: var(--text-muted); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.08em; }
+    .comparison-table td:first-child { color: var(--text-secondary); font-size: 0.9rem; }
+    .comparison-table td:not(:first-child) { text-align: center; font-size: 0.9rem; }
+    .check-yes { color: var(--accent-green); font-size: 1.1rem; }
+    .check-no { color: var(--text-muted); font-size: 1.1rem; }
+    .col-scanner { color: var(--accent-cyan); font-weight: 700; }
+    .col-network { color: var(--accent-purple); font-weight: 700; }
+    @media (max-width: 768px) { .product-detail-grid { grid-template-columns: 1fr; direction: ltr !important; } .feature-grid { grid-template-columns: 1fr; } .comparison-table th, .comparison-table td { padding: 0.75rem; } }
+  </style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo"><div class="logo-icon"><svg viewBox="0 0 40 40" fill="none"><path d="M20 2L4 10v12c0 9.4 6.8 18.2 16 20 9.2-1.8 16-10.6 16-20V10L20 2z" fill="#0a1628" stroke="url(#sgp)" stroke-width="1.5"/><path d="M14 20l4 4 8-8" stroke="#00f5ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="sgp" x1="4" y1="2" x2="36" y2="42" gradientUnits="userSpaceOnUse"><stop stop-color="#00f5ff"/><stop offset="1" stop-color="#0066ff"/></linearGradient></defs></svg></div><span class="logo-text">Force<span class="accent">Fortitude</span></span></a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="products.html" class="nav-link active">Products</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li><a href="contact.html" class="btn btn-primary nav-cta">Get Protected</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container page-hero-content">
+    <span class="section-tag mono">The Fortive Suite</span>
+    <h1>AI-Powered <span class="gradient-text">Security Tools</span></h1>
+    <p>Two specialised penetration testing platforms — one for your external attack surface, one for internal networks — built with AI at the core.</p>
+  </div>
+</section>
+
+<main>
+  <!-- Fortive Scanner -->
+  <section class="product-detail" id="scanner">
+    <div class="container">
+      <div class="product-detail-grid">
+        <div class="product-detail-text">
+          <div class="product-label label-cyan">External Pen Tester</div>
+          <h2>Fortive <span class="gradient-text">Scanner</span></h2>
+          <p>Fortive Scanner is our AI-enhanced external attack surface management and penetration testing platform. It continuously discovers, enumerates, and probes your internet-facing infrastructure — the same way real attackers do.</p>
+          <p>Unlike traditional scanners that rely only on CVE databases, Fortive Scanner uses machine learning to correlate findings, predict exploitation likelihood, and prioritise what actually matters to your business — cutting alert noise by up to 70%.</p>
+          <div class="feature-grid">
+            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 1"/></svg>Continuous scanning</div>
+            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l6 3 6-3M2 8l6 3 6-3M2 12l6 3 6-3"/></svg>Subdomain enumeration</div>
+            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2l1.5 3 3.5.5-2.5 2.5.5 3.5L8 10l-3 1.5.5-3.5-2.5-2.5L6.5 5z"/></svg>CVE detection</div>
+            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 3H3l4 5v4l2 1V8z"/></svg>AI risk scoring</div>
+            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 8h6M8 5v6"/></svg>SSL/TLS analysis</div>
+            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2l-8 8-4-4"/></svg>PDF reporting</div>
+          </div>
+          <a href="contact.html" class="btn btn-primary">Request Access</a>
+        </div>
+        <div class="product-visual">
+          <div class="product-screenshot">
+            <div class="product-ss-header"><div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div><span class="product-ss-title mono">Fortive Scanner &mdash; Findings</span></div>
+            <div class="product-ss-body">
+              <p style="color:var(--text-muted);font-size:0.78rem;font-family:'JetBrains Mono',monospace;margin-bottom:1rem;">[target] client.com.au &mdash; scan complete</p>
+              <div class="scan-result crit"><span class="scan-name">CVE-2024-1234 &mdash; RCE via Log4j</span><span class="scan-sev sev-crit">CRITICAL</span><span class="scan-score">9.8</span></div>
+              <div class="scan-result high"><span class="scan-name">Exposed admin panel &mdash; /admin</span><span class="scan-sev sev-high">HIGH</span><span class="scan-score">7.5</span></div>
+              <div class="scan-result high"><span class="scan-name">Outdated TLS 1.0 on mail.client.com</span><span class="scan-sev sev-high">HIGH</span><span class="scan-score">7.1</span></div>
+              <div class="scan-result med"><span class="scan-name">Missing HSTS header on api.*</span><span class="scan-sev sev-med">MEDIUM</span><span class="scan-score">5.3</span></div>
+              <div class="scan-result med"><span class="scan-name">Open port 3306 MySQL externally</span><span class="scan-sev sev-med">MEDIUM</span><span class="scan-score">5.0</span></div>
+              <div class="scan-result low"><span class="scan-name">Clickjacking X-Frame-Options missing</span><span class="scan-sev sev-low">LOW</span><span class="scan-score">3.1</span></div>
+              <p style="color:var(--text-muted);font-size:0.75rem;font-family:'JetBrains Mono',monospace;margin-top:1rem;">[+] 3 Critical &nbsp; [+] 2 High &nbsp; [+] 2 Medium &nbsp; [+] 1 Low</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fortive Network -->
+  <section class="product-detail" id="network">
+    <div class="container">
+      <div class="product-detail-grid">
+        <div class="product-detail-text">
+          <div class="product-label label-purple">Internal Pen Tester</div>
+          <h2>Fortive <span class="gradient-text">Network</span></h2>
+          <p>Fortive Network is our internal penetration testing and lateral movement simulation platform. Deploy it inside your network to simulate post-breach adversary behaviour — discovering attack paths that external tools simply cannot see.</p>
+          <p>Built around real adversary TTPs (Tactics, Techniques, and Procedures) from the MITRE ATT&amp;CK framework, Fortive Network maps the exact paths an attacker would take from initial access to domain dominance.</p>
+          <div class="feature-grid">
+            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="4" cy="4" r="2"/><circle cx="12" cy="4" r="2"/><circle cx="8" cy="12" r="2"/><path d="M4 6v2a4 4 0 004 4M12 6v2a4 4 0 01-4 4"/></svg>Network mapping</div>
+            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="12" height="10" rx="1"/><path d="M5 4V3a3 3 0 016 0v1"/></svg>Credential testing</div>
+            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v12M2 8h12"/></svg>AD enumeration</div>
+            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8l3 3 9-9"/></svg>MITRE ATT&amp;CK mapped</div>
+            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1v6l4 2"/></svg>Real-time results</div>
+            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5h10M3 8h7M3 11h4"/></svg>Compliance reports</div>
+          </div>
+          <a href="contact.html" class="btn btn-outline-purple">Request Access</a>
+        </div>
+        <div class="product-visual">
+          <div class="product-screenshot">
+            <div class="product-ss-header"><div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div><span class="product-ss-title mono">Fortive Network &mdash; Attack Paths</span></div>
+            <div class="product-ss-body">
+              <p style="color:var(--text-muted);font-size:0.78rem;font-family:'JetBrains Mono',monospace;margin-bottom:1rem;">[network] 192.168.1.0/24 &mdash; mapping complete</p>
+              <div class="scan-result crit"><span class="scan-name">Domain Admin path found (3 hops)</span><span class="scan-sev sev-crit">CRITICAL</span></div>
+              <div class="scan-result crit"><span class="scan-name">LLMNR poisoning &mdash; NTLMv2 captured</span><span class="scan-sev sev-crit">CRITICAL</span></div>
+              <div class="scan-result high"><span class="scan-name">Kerberoastable service accounts: 4</span><span class="scan-sev sev-high">HIGH</span></div>
+              <div class="scan-result high"><span class="scan-name">SMB signing disabled on 12 hosts</span><span class="scan-sev sev-high">HIGH</span></div>
+              <div class="scan-result med"><span class="scan-name">Plaintext creds in SYSVOL GPO</span><span class="scan-sev sev-med">MEDIUM</span></div>
+              <div class="scan-result low"><span class="scan-name">Null sessions enabled on DC01</span><span class="scan-sev sev-low">LOW</span></div>
+              <p style="color:var(--text-muted);font-size:0.75rem;font-family:'JetBrains Mono',monospace;margin-top:1rem;">[*] 47 hosts enumerated &nbsp; [*] MITRE TTPs mapped</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison -->
+  <section class="section" style="background:var(--bg-primary)">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag mono">Compare</span>
+        <h2 class="section-title"><span class="gradient-text">Scanner vs Network</span></h2>
+        <p class="section-subtitle">Choose the right tool for your testing scenario — or deploy both for complete coverage.</p>
+      </div>
+      <div style="overflow-x:auto">
+        <table class="comparison-table">
+          <thead><tr><th>Feature</th><th class="col-scanner">Fortive Scanner</th><th class="col-network">Fortive Network</th></tr></thead>
+          <tbody>
+            <tr><td>Target Scope</td><td>Internet-facing / External</td><td>Internal network</td></tr>
+            <tr><td>Deployment</td><td>Cloud SaaS</td><td>On-premise / VPN</td></tr>
+            <tr><td>Subdomain Enumeration</td><td><span class="check-yes">&#10003;</span></td><td><span class="check-no">&mdash;</span></td></tr>
+            <tr><td>CVE Detection</td><td><span class="check-yes">&#10003;</span></td><td><span class="check-yes">&#10003;</span></td></tr>
+            <tr><td>Active Directory Testing</td><td><span class="check-no">&mdash;</span></td><td><span class="check-yes">&#10003;</span></td></tr>
+            <tr><td>Lateral Movement Simulation</td><td><span class="check-no">&mdash;</span></td><td><span class="check-yes">&#10003;</span></td></tr>
+            <tr><td>SSL/TLS Analysis</td><td><span class="check-yes">&#10003;</span></td><td><span class="check-yes">&#10003;</span></td></tr>
+            <tr><td>Dark Web Correlation</td><td><span class="check-yes">&#10003;</span></td><td><span class="check-no">&mdash;</span></td></tr>
+            <tr><td>AI Risk Scoring</td><td><span class="check-yes">&#10003;</span></td><td><span class="check-yes">&#10003;</span></td></tr>
+            <tr><td>MITRE ATT&amp;CK Mapped</td><td><span class="check-yes">&#10003;</span></td><td><span class="check-yes">&#10003;</span></td></tr>
+            <tr><td>PDF Report Generation</td><td><span class="check-yes">&#10003;</span></td><td><span class="check-yes">&#10003;</span></td></tr>
+            <tr><td>Continuous / Scheduled</td><td><span class="check-yes">&#10003;</span></td><td><span class="check-yes">&#10003;</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<section class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="container" style="position:relative;text-align:center;padding:4rem 1.5rem;">
+    <h2 style="font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:1rem;">Ready to See It in Action?</h2>
+    <p style="color:var(--text-secondary);font-size:1.05rem;max-width:550px;margin:0 auto 2rem;line-height:1.7;">Request a live demo of Fortive Scanner or Fortive Network and see the power of AI-driven penetration testing for yourself.</p>
+    <a href="contact.html" class="btn btn-primary btn-lg">Request a Demo</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand"><a href="index.html" class="logo"><div class="logo-icon logo-icon-sm"><svg viewBox="0 0 40 40" fill="none"><path d="M20 2L4 10v12c0 9.4 6.8 18.2 16 20 9.2-1.8 16-10.6 16-20V10L20 2z" fill="#0a1628" stroke="url(#sg7)" stroke-width="1.5"/><path d="M14 20l4 4 8-8" stroke="#00f5ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="sg7" x1="4" y1="2" x2="36" y2="42" gradientUnits="userSpaceOnUse"><stop stop-color="#00f5ff"/><stop offset="1" stop-color="#0066ff"/></linearGradient></defs></svg></div><span class="logo-text">Force<span class="accent">Fortitude</span></span></a><p class="footer-tagline">Empowering Australian businesses with military-grade, AI-powered cybersecurity.</p><p class="footer-abn mono">ABN: 42 691 602 276 | NSW 2197, Australia</p></div>
+    <div class="footer-links"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="products.html">Products</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-links"><h4>Services</h4><ul><li><a href="services.html">External Pen Testing</a></li><li><a href="services.html">Internal Pen Testing</a></li><li><a href="services.html">Dark Web Monitoring</a></li><li><a href="services.html">Security Assessments</a></li></ul></div>
+    <div class="footer-links"><h4>Products</h4><ul><li><a href="products.html">Fortive Scanner</a></li><li><a href="products.html">Fortive Network</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div class="container footer-bottom-inner"><span class="mono">&copy; 2026 Force Fortitude Pty Ltd. All rights reserved.</span><div class="footer-legal"><a href="#">Privacy Policy</a><span>&middot;</span><a href="#">Terms of Service</a></div></div></div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

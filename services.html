@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services | Force Fortitude - Cybersecurity Services for Australian Business</title>
+  <meta name="description" content="Force Fortitude offers external and internal penetration testing, vulnerability assessments, dark web monitoring, AI-driven threat intelligence, and security assessments for Australian businesses."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <style>
+    .page-hero { padding: calc(var(--nav-height) + 5rem) 0 5rem; background: var(--bg-secondary); position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(0,245,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,245,255,0.03) 1px, transparent 1px); background-size: 60px 60px; }
+    .page-hero-content { position: relative; text-align: center; }
+    .page-hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; }
+    .page-hero p { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.7; }
+    .service-detail { padding: 5rem 0; border-bottom: 1px solid var(--border); }
+    .service-detail:last-child { border-bottom: none; }
+    .service-detail:nth-child(even) { background: var(--bg-secondary); }
+    .service-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .service-detail:nth-child(even) .service-detail-grid { direction: rtl; }
+    .service-detail:nth-child(even) .service-detail-content { direction: ltr; }
+    .service-detail:nth-child(even) .service-detail-visual { direction: ltr; }
+    .service-detail-content h2 { font-size: 2rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; }
+    .service-detail-content p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; }
+    .service-deliverables { margin-top: 1.5rem; }
+    .service-deliverables h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.75rem; }
+    .deliverable-list { display: flex; flex-direction: column; gap: 0.5rem; }
+    .deliverable-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; color: var(--text-secondary); }
+    .deliverable-item svg { width: 16px; height: 16px; flex-shrink: 0; color: var(--accent-cyan); }
+    .service-visual-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; }
+    .service-visual-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .service-visual-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; }
+    .service-visual-icon svg { width: 28px; height: 28px; }
+    .service-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .service-stat-box { background: rgba(0,0,0,0.2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; text-align: center; }
+    .service-stat-box .big { font-size: 1.8rem; font-weight: 800; color: var(--accent-cyan); }
+    .service-stat-box .lbl { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem; }
+    @media (max-width: 768px) { .service-detail-grid { grid-template-columns: 1fr; direction: ltr !important; } }
+  </style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo"><div class="logo-icon"><svg viewBox="0 0 40 40" fill="none"><path d="M20 2L4 10v12c0 9.4 6.8 18.2 16 20 9.2-1.8 16-10.6 16-20V10L20 2z" fill="#0a1628" stroke="url(#sgs)" stroke-width="1.5"/><path d="M14 20l4 4 8-8" stroke="#00f5ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="sgs" x1="4" y1="2" x2="36" y2="42" gradientUnits="userSpaceOnUse"><stop stop-color="#00f5ff"/><stop offset="1" stop-color="#0066ff"/></linearGradient></defs></svg></div><span class="logo-text">Force<span class="accent">Fortitude</span></span></a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="services.html" class="nav-link active">Services</a></li>
+      <li><a href="products.html" class="nav-link">Products</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li><a href="contact.html" class="btn btn-primary nav-cta">Get Protected</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container page-hero-content">
+    <span class="section-tag mono">What We Offer</span>
+    <h1>Comprehensive <span class="gradient-text">Security Services</span></h1>
+    <p>From attack simulation to compliance, our expert-led services cover every layer of your security posture — tailored to Australian businesses.</p>
+  </div>
+</section>
+
+<main>
+  <!-- External Pen Test -->
+  <section class="service-detail" id="external-pentest">
+    <div class="container">
+      <div class="service-detail-grid">
+        <div class="service-detail-content">
+          <div class="service-icon icon-red" style="margin-bottom:1.25rem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+          <h2>External <span class="gradient-text">Penetration Testing</span></h2>
+          <p>We simulate the full external attack chain against your internet-facing infrastructure — the same techniques used by real adversaries. No whitelisting, no hand-holding.</p>
+          <p>Our methodology follows PTES, OWASP, and NIST guidelines, ensuring thorough coverage of your external attack surface including web applications, APIs, cloud services, email infrastructure, and network perimeter.</p>
+          <div class="service-deliverables">
+            <h4>What You Get</h4>
+            <div class="deliverable-list">
+              <div class="deliverable-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Detailed technical report with CVSS scores</div>
+              <div class="deliverable-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Executive summary for leadership</div>
+              <div class="deliverable-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Prioritised remediation roadmap</div>
+              <div class="deliverable-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Proof-of-concept for critical findings</div>
+              <div class="deliverable-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Free re-test within 90 days</div>
+            </div>
+          </div>
+          <a href="contact.html" class="btn btn-primary" style="margin-top:1.5rem">Get a Quote</a>
+        </div>
+        <div class="service-detail-visual">
+          <div class="service-visual-card">
+            <div class="service-visual-header">
+              <div class="service-visual-icon icon-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+              <div><strong>Scope Coverage</strong><p style="color:var(--text-muted);font-size:0.82rem">Typical engagement targets</p></div>
+            </div>
+            <div class="service-stats">
+              <div class="service-stat-box"><div class="big">98%</div><div class="lbl">Clients find critical issues</div></div>
+              <div class="service-stat-box"><div class="big">14+</div><div class="lbl">Avg subdomains discovered</div></div>
+              <div class="service-stat-box"><div class="big">3-5</div><div class="lbl">Days turnaround</div></div>
+              <div class="service-stat-box"><div class="big">24hr</div><div class="lbl">Critical alert response</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal Pen Test -->
+  <section class="service-detail" id="internal-pentest">
+    <div class="container">
+      <div class="service-detail-grid">
+        <div class="service-detail-content">
+          <div class="service-icon icon-blue" style="margin-bottom:1.25rem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12H3l9-9 9 9h-2M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg></div>
+          <h2>Internal Network <span class="gradient-text">Penetration Testing</span></h2>
+          <p>Assume breach. Once an attacker is inside your network — via phishing, a compromised credential, or a supply chain attack — how far can they go? We find out for you.</p>
+          <p>We deploy our Fortive Network platform combined with expert manual testing to map internal hosts, identify privilege escalation paths, enumerate Active Directory misconfigurations, and simulate the damage a real insider threat could cause.</p>
+          <div class="service-deliverables">
+            <h4>What You Get</h4>
+            <div class="deliverable-list">
+              <div class="deliverable-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Network topology and exposure map</div>
+              <div class="deliverable-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Active Directory attack paths</div>
+              <div class="deliverable-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Credential exposure analysis</div>
+              <div class="deliverable-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Lateral movement simulation report</div>
+              <div class="deliverable-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Segmentation and VLAN bypass findings</div>
+            </div>
+          </div>
+          <a href="contact.html" class="btn btn-primary" style="margin-top:1.5rem">Get a Quote</a>
+        </div>
+        <div class="service-detail-visual">
+          <div class="service-visual-card">
+            <div class="service-visual-header">
+              <div class="service-visual-icon icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12H3l9-9 9 9h-2M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg></div>
+              <div><strong>Attack Coverage</strong><p style="color:var(--text-muted);font-size:0.82rem">Internal assessment scope</p></div>
+            </div>
+            <div class="service-stats">
+              <div class="service-stat-box"><div class="big">AD</div><div class="lbl">Attack enumeration</div></div>
+              <div class="service-stat-box"><div class="big">SMB</div><div class="lbl">Relay attack testing</div></div>
+              <div class="service-stat-box"><div class="big">LLMNR</div><div class="lbl">Poisoning simulation</div></div>
+              <div class="service-stat-box"><div class="big">Kerberoast</div><div class="lbl">Service account attacks</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dark Web -->
+  <section class="service-detail" id="darkweb">
+    <div class="container">
+      <div class="service-detail-grid">
+        <div class="service-detail-content">
+          <div class="service-icon icon-teal" style="margin-bottom:1.25rem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
+          <h2>Dark Web <span class="gradient-text">Monitoring</span></h2>
+          <p>Your stolen credentials, leaked documents, and exposed intellectual property may already be for sale on dark web markets — and you don't know about it yet. We monitor the places you can't.</p>
+          <p>Our continuous monitoring covers Tor-based marketplaces, paste sites, hacking forums, Telegram channels, and breach databases — alerting you the moment your organisation's data appears.</p>
+          <div class="service-deliverables">
+            <h4>What You Get</h4>
+            <div class="deliverable-list">
+              <div class="deliverable-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Real-time alerts for credential exposure</div>
+              <div class="deliverable-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Brand mention monitoring</div>
+              <div class="deliverable-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Domain and IP threat monitoring</div>
+              <div class="deliverable-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Monthly intelligence digest reports</div>
+              <div class="deliverable-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Incident response guidance on findings</div>
+            </div>
+          </div>
+          <a href="contact.html" class="btn btn-primary" style="margin-top:1.5rem">Get a Quote</a>
+        </div>
+        <div class="service-detail-visual">
+          <div class="service-visual-card">
+            <div class="service-visual-header">
+              <div class="service-visual-icon icon-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
+              <div><strong>Intelligence Sources</strong><p style="color:var(--text-muted);font-size:0.82rem">Where we monitor</p></div>
+            </div>
+            <div class="service-stats">
+              <div class="service-stat-box"><div class="big">Tor</div><div class="lbl">Dark web markets</div></div>
+              <div class="service-stat-box"><div class="big">IRC</div><div class="lbl">Hacking channels</div></div>
+              <div class="service-stat-box"><div class="big">Paste</div><div class="lbl">Sites and leaks</div></div>
+              <div class="service-stat-box"><div class="big">24/7</div><div class="lbl">Continuous monitoring</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<section class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="container" style="position:relative;text-align:center;padding:4rem 1.5rem;">
+    <h2 style="font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:1rem;">Not Sure Which Service You Need?</h2>
+    <p style="color:var(--text-secondary);font-size:1.05rem;max-width:550px;margin:0 auto 2rem;line-height:1.7;">Book a free consultation and our experts will assess your current posture and recommend the right approach for your business size and industry.</p>
+    <a href="contact.html" class="btn btn-primary btn-lg">Book Free Consultation</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand"><a href="index.html" class="logo"><div class="logo-icon logo-icon-sm"><svg viewBox="0 0 40 40" fill="none"><path d="M20 2L4 10v12c0 9.4 6.8 18.2 16 20 9.2-1.8 16-10.6 16-20V10L20 2z" fill="#0a1628" stroke="url(#sg6)" stroke-width="1.5"/><path d="M14 20l4 4 8-8" stroke="#00f5ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="sg6" x1="4" y1="2" x2="36" y2="42" gradientUnits="userSpaceOnUse"><stop stop-color="#00f5ff"/><stop offset="1" stop-color="#0066ff"/></linearGradient></defs></svg></div><span class="logo-text">Force<span class="accent">Fortitude</span></span></a><p class="footer-tagline">Empowering Australian businesses with military-grade, AI-powered cybersecurity.</p><p class="footer-abn mono">ABN: 42 691 602 276 | NSW 2197, Australia</p></div>
+    <div class="footer-links"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="products.html">Products</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-links"><h4>Services</h4><ul><li><a href="services.html">External Pen Testing</a></li><li><a href="services.html">Internal Pen Testing</a></li><li><a href="services.html">Dark Web Monitoring</a></li><li><a href="services.html">Security Assessments</a></li></ul></div>
+    <div class="footer-links"><h4>Products</h4><ul><li><a href="products.html">Fortive Scanner</a></li><li><a href="products.html">Fortive Network</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div class="container footer-bottom-inner"><span class="mono">&copy; 2026 Force Fortitude Pty Ltd. All rights reserved.</span><div class="footer-legal"><a href="#">Privacy Policy</a><span>&middot;</span><a href="#">Terms of Service</a></div></div></div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
