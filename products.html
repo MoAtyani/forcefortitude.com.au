@@ -94,32 +94,31 @@
     <div class="container">
       <div class="product-detail-grid">
         <div class="product-detail-text">
-          <div class="product-label label-cyan">External Pen Tester</div>
+          <div class="product-label label-cyan">External Pen Tester &mdash; Autonomous AI Engine</div>
           <h2>Fortive <span class="gradient-text">Scanner</span></h2>
-          <p>Fortive Scanner is our AI-enhanced external attack surface management and penetration testing platform. It continuously discovers, enumerates, and probes your internet-facing infrastructure — the same way real attackers do.</p>
-          <p>Unlike traditional scanners that rely only on CVE databases, Fortive Scanner uses machine learning to correlate findings, predict exploitation likelihood, and prioritise what actually matters to your business — cutting alert noise by up to 70%.</p>
+          <p>Fortive Scanner is our military-grade, AI-driven external penetration testing and attack surface intelligence engine. Powered by an 11-stage Directed Acyclic Graph (DAG) pipeline orchestrator, it continuously discovers, enumerates, and validates your internet-facing perimeter.</p>
+          <p>Unlike basic scanners that rely on static CVE databases, Fortive Scanner deploys an autonomous AI Playwright browser agent to dynamically verify DOM-level vulnerabilities, execute stored XSS fuzzing, analyze JWT token security, and probe multi-session authorization bypasses with zero false positives.</p>
           <div class="feature-grid">
-            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 1"/></svg>Continuous scanning</div>
-            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l6 3 6-3M2 8l6 3 6-3M2 12l6 3 6-3"/></svg>Subdomain enumeration</div>
-            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2l1.5 3 3.5.5-2.5 2.5.5 3.5L8 10l-3 1.5.5-3.5-2.5-2.5L6.5 5z"/></svg>CVE detection</div>
-            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 3H3l4 5v4l2 1V8z"/></svg>AI risk scoring</div>
-            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 8h6M8 5v6"/></svg>SSL/TLS analysis</div>
-            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2l-8 8-4-4"/></svg>PDF reporting</div>
+            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 1"/></svg>11-Stage DAG Orchestrator</div>
+            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l6 3 6-3M2 8l6 3 6-3M2 12l6 3 6-3"/></svg>AI Browser Agent (Playwright)</div>
+            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2l1.5 3 3.5.5-2.5 2.5.5 3.5L8 10l-3 1.5.5-3.5-2.5-2.5L6.5 5z"/></svg>JS Deep Parsing &amp; Endpoint Mining</div>
+            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 3H3l4 5v4l2 1V8z"/></svg>DeepSeek / LLM Reasoner</div>
+            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 8h6M8 5v6"/></svg>Attack Graph Path Visualizer</div>
+            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2l-8 8-4-4"/></svg>SARIF 2.1.0 &amp; PDF Export</div>
           </div>
-          <a href="contact.html" class="btn btn-primary">Request Access</a>
+          <a href="contact.html" class="btn btn-primary">Request Scanner Access</a>
         </div>
         <div class="product-visual">
           <div class="product-screenshot">
-            <div class="product-ss-header"><div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div><span class="product-ss-title mono">Fortive Scanner &mdash; Findings</span></div>
+            <div class="product-ss-header"><div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div><span class="product-ss-title mono">fortive-scanner &mdash; DAG Engine</span></div>
             <div class="product-ss-body">
-              <p style="color:var(--text-muted);font-size:0.78rem;font-family:'JetBrains Mono',monospace;margin-bottom:1rem;">[target] client.com.au &mdash; scan complete</p>
-              <div class="scan-result crit"><span class="scan-name">CVE-2024-1234 &mdash; RCE via Log4j</span><span class="scan-sev sev-crit">CRITICAL</span><span class="scan-score">9.8</span></div>
-              <div class="scan-result high"><span class="scan-name">Exposed admin panel &mdash; /admin</span><span class="scan-sev sev-high">HIGH</span><span class="scan-score">7.5</span></div>
-              <div class="scan-result high"><span class="scan-name">Outdated TLS 1.0 on mail.client.com</span><span class="scan-sev sev-high">HIGH</span><span class="scan-score">7.1</span></div>
-              <div class="scan-result med"><span class="scan-name">Missing HSTS header on api.*</span><span class="scan-sev sev-med">MEDIUM</span><span class="scan-score">5.3</span></div>
-              <div class="scan-result med"><span class="scan-name">Open port 3306 MySQL externally</span><span class="scan-sev sev-med">MEDIUM</span><span class="scan-score">5.0</span></div>
-              <div class="scan-result low"><span class="scan-name">Clickjacking X-Frame-Options missing</span><span class="scan-sev sev-low">LOW</span><span class="scan-score">3.1</span></div>
-              <p style="color:var(--text-muted);font-size:0.75rem;font-family:'JetBrains Mono',monospace;margin-top:1rem;">[+] 3 Critical &nbsp; [+] 2 High &nbsp; [+] 2 Medium &nbsp; [+] 1 Low</p>
+              <p style="color:var(--text-muted);font-size:0.78rem;font-family:'JetBrains Mono',monospace;margin-bottom:1rem;">[engine] ScanOrchestrator v2.4 &mdash; 11-stage execution</p>
+              <div class="scan-result crit"><span class="scan-name">DOM XSS verified via AI Playwright agent</span><span class="scan-sev sev-crit">CRITICAL</span><span class="scan-score">9.8</span></div>
+              <div class="scan-result high"><span class="scan-name">JS Deep Parsing &mdash; API key leaked in bundle.js</span><span class="scan-sev sev-high">HIGH</span><span class="scan-score">8.4</span></div>
+              <div class="scan-result high"><span class="scan-name">JWT signature null-alg bypass verified</span><span class="scan-sev sev-high">HIGH</span><span class="scan-score">7.8</span></div>
+              <div class="scan-result med"><span class="scan-name">Subdomain takeover risk on dev.client.com</span><span class="scan-sev sev-med">MEDIUM</span><span class="scan-score">5.6</span></div>
+              <div class="scan-result med"><span class="scan-name">Outdated TLS 1.0 &amp; weak cipher suites</span><span class="scan-sev sev-med">MEDIUM</span><span class="scan-score">5.1</span></div>
+              <p style="color:var(--text-muted);font-size:0.75rem;font-family:'JetBrains Mono',monospace;margin-top:1rem;">[+] Attack Graph constructed &nbsp; [+] SARIF 2.1.0 exported</p>
             </div>
           </div>
         </div>
@@ -132,32 +131,32 @@
     <div class="container">
       <div class="product-detail-grid">
         <div class="product-detail-text">
-          <div class="product-label label-purple">Internal Pen Tester</div>
+          <div class="product-label label-purple">Internal Pen Tester &mdash; Orion Pro Engine</div>
           <h2>Fortive <span class="gradient-text">Network</span></h2>
-          <p>Fortive Network is our internal penetration testing and lateral movement simulation platform. Deploy it inside your network to simulate post-breach adversary behaviour — discovering attack paths that external tools simply cannot see.</p>
-          <p>Built around real adversary TTPs (Tactics, Techniques, and Procedures) from the MITRE ATT&amp;CK framework, Fortive Network maps the exact paths an attacker would take from initial access to domain dominance.</p>
+          <p>Fortive Network (powered by our Orion Pro enterprise appliance) is our internal penetration testing, Active Directory threat auditing, and lateral movement defense platform. Deployed as a secure OVA virtual appliance inside your corporate network, it simulates post-breach adversary behavior safely.</p>
+          <p>Mapped directly to the MITRE ATT&amp;CK framework, Fortive Network enumerates Active Directory domain trusts, Kerberoasting, AS-REP roasting, DCSync paths, and SYSVOL GPO credential leaks while providing sub-second automated ransomware isolation.</p>
           <div class="feature-grid">
-            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="4" cy="4" r="2"/><circle cx="12" cy="4" r="2"/><circle cx="8" cy="12" r="2"/><path d="M4 6v2a4 4 0 004 4M12 6v2a4 4 0 01-4 4"/></svg>Network mapping</div>
-            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="12" height="10" rx="1"/><path d="M5 4V3a3 3 0 016 0v1"/></svg>Credential testing</div>
-            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v12M2 8h12"/></svg>AD enumeration</div>
-            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8l3 3 9-9"/></svg>MITRE ATT&amp;CK mapped</div>
-            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1v6l4 2"/></svg>Real-time results</div>
-            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5h10M3 8h7M3 11h4"/></svg>Compliance reports</div>
+            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="4" cy="4" r="2"/><circle cx="12" cy="4" r="2"/><circle cx="8" cy="12" r="2"/><path d="M4 6v2a4 4 0 004 4M12 6v2a4 4 0 01-4 4"/></svg>Orion Pro Appliance OVA</div>
+            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="12" height="10" rx="1"/><path d="M5 4V3a3 3 0 016 0v1"/></svg>Kerberoasting / AS-REP Audit</div>
+            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v12M2 8h12"/></svg>Active Directory Trust Mapping</div>
+            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8l3 3 9-9"/></svg>Ransomware Sub-Second Isolation</div>
+            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1v6l4 2"/></svg>Zero-Disruption Rate Limit</div>
+            <div class="feature-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5h10M3 8h7M3 11h4"/></svg>APRA &amp; ASD Compliance Reports</div>
           </div>
-          <a href="contact.html" class="btn btn-outline-purple">Request Access</a>
+          <a href="contact.html" class="btn btn-outline-purple">Deploy Network Appliance</a>
         </div>
         <div class="product-visual">
           <div class="product-screenshot">
-            <div class="product-ss-header"><div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div><span class="product-ss-title mono">Fortive Network &mdash; Attack Paths</span></div>
+            <div class="product-ss-header"><div class="terminal-dots"><span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span></div><span class="product-ss-title mono">Fortive Network &mdash; AD Attack Paths</span></div>
             <div class="product-ss-body">
-              <p style="color:var(--text-muted);font-size:0.78rem;font-family:'JetBrains Mono',monospace;margin-bottom:1rem;">[network] 192.168.1.0/24 &mdash; mapping complete</p>
-              <div class="scan-result crit"><span class="scan-name">Domain Admin path found (3 hops)</span><span class="scan-sev sev-crit">CRITICAL</span></div>
-              <div class="scan-result crit"><span class="scan-name">LLMNR poisoning &mdash; NTLMv2 captured</span><span class="scan-sev sev-crit">CRITICAL</span></div>
-              <div class="scan-result high"><span class="scan-name">Kerberoastable service accounts: 4</span><span class="scan-sev sev-high">HIGH</span></div>
-              <div class="scan-result high"><span class="scan-name">SMB signing disabled on 12 hosts</span><span class="scan-sev sev-high">HIGH</span></div>
-              <div class="scan-result med"><span class="scan-name">Plaintext creds in SYSVOL GPO</span><span class="scan-sev sev-med">MEDIUM</span></div>
-              <div class="scan-result low"><span class="scan-name">Null sessions enabled on DC01</span><span class="scan-sev sev-low">LOW</span></div>
-              <p style="color:var(--text-muted);font-size:0.75rem;font-family:'JetBrains Mono',monospace;margin-top:1rem;">[*] 47 hosts enumerated &nbsp; [*] MITRE TTPs mapped</p>
+              <p style="color:var(--text-muted);font-size:0.78rem;font-family:'JetBrains Mono',monospace;margin-bottom:1rem;">[appliance] DomainX Orion Pro V1.4 &mdash; active</p>
+              <div class="scan-result crit"><span class="scan-name">Domain Admin path mapped via Kerberoasting</span><span class="scan-sev sev-crit">CRITICAL</span></div>
+              <div class="scan-result crit"><span class="scan-name">DCSync privilege escalation vector on DC01</span><span class="scan-sev sev-crit">CRITICAL</span></div>
+              <div class="scan-result high"><span class="scan-name">4 Kerberoastable SPNs &mdash; weak AES encryption</span><span class="scan-sev sev-high">HIGH</span></div>
+              <div class="scan-result high"><span class="scan-name">SYSVOL GPO plaintext password exposed</span><span class="scan-sev sev-high">HIGH</span></div>
+              <div class="scan-result med"><span class="scan-name">LLMNR / NBT-NS broadcast responses enabled</span><span class="scan-sev sev-med">MEDIUM</span></div>
+              <div class="scan-result low"><span class="scan-name">SMB Signing optional on 14 member servers</span><span class="scan-sev sev-low">LOW</span></div>
+              <p style="color:var(--text-muted);font-size:0.75rem;font-family:'JetBrains Mono',monospace;margin-top:1rem;">[*] 128 AD Objects Audited &nbsp; [*] Sub-Second Isolation Ready</p>
             </div>
           </div>
         </div>
@@ -171,24 +170,22 @@
       <div class="section-header">
         <span class="section-tag mono">Compare</span>
         <h2 class="section-title"><span class="gradient-text">Scanner vs Network</span></h2>
-        <p class="section-subtitle">Choose the right tool for your testing scenario — or deploy both for complete coverage.</p>
+        <p class="section-subtitle">Choose the right engine for your security mandate &mdash; or combine both for 360-degree coverage.</p>
       </div>
       <div style="overflow-x:auto">
         <table class="comparison-table">
           <thead><tr><th>Feature</th><th class="col-scanner">Fortive Scanner</th><th class="col-network">Fortive Network</th></tr></thead>
           <tbody>
-            <tr><td>Target Scope</td><td>Internet-facing / External</td><td>Internal network</td></tr>
-            <tr><td>Deployment</td><td>Cloud SaaS</td><td>On-premise / VPN</td></tr>
-            <tr><td>Subdomain Enumeration</td><td><span class="check-yes">&#10003;</span></td><td><span class="check-no">&mdash;</span></td></tr>
-            <tr><td>CVE Detection</td><td><span class="check-yes">&#10003;</span></td><td><span class="check-yes">&#10003;</span></td></tr>
-            <tr><td>Active Directory Testing</td><td><span class="check-no">&mdash;</span></td><td><span class="check-yes">&#10003;</span></td></tr>
-            <tr><td>Lateral Movement Simulation</td><td><span class="check-no">&mdash;</span></td><td><span class="check-yes">&#10003;</span></td></tr>
-            <tr><td>SSL/TLS Analysis</td><td><span class="check-yes">&#10003;</span></td><td><span class="check-yes">&#10003;</span></td></tr>
-            <tr><td>Dark Web Correlation</td><td><span class="check-yes">&#10003;</span></td><td><span class="check-no">&mdash;</span></td></tr>
-            <tr><td>AI Risk Scoring</td><td><span class="check-yes">&#10003;</span></td><td><span class="check-yes">&#10003;</span></td></tr>
-            <tr><td>MITRE ATT&amp;CK Mapped</td><td><span class="check-yes">&#10003;</span></td><td><span class="check-yes">&#10003;</span></td></tr>
-            <tr><td>PDF Report Generation</td><td><span class="check-yes">&#10003;</span></td><td><span class="check-yes">&#10003;</span></td></tr>
-            <tr><td>Continuous / Scheduled</td><td><span class="check-yes">&#10003;</span></td><td><span class="check-yes">&#10003;</span></td></tr>
+            <tr><td>Target Scope</td><td>External Perimeter &amp; Web Apps</td><td>Internal Corporate Network &amp; AD</td></tr>
+            <tr><td>Engine Architecture</td><td>11-Stage DAG Orchestrator</td><td>Orion Pro OVA Virtual Appliance</td></tr>
+            <tr><td>AI Browser Verification</td><td><span class="check-yes">&#10003; (Playwright LLM Agent)</span></td><td><span class="check-no">&mdash;</span></td></tr>
+            <tr><td>JS Deep Parsing &amp; Key Extraction</td><td><span class="check-yes">&#10003;</span></td><td><span class="check-no">&mdash;</span></td></tr>
+            <tr><td>Active Directory &amp; Kerberos Audit</td><td><span class="check-no">&mdash;</span></td><td><span class="check-yes">&#10003;</span></td></tr>
+            <tr><td>Sub-Second Ransomware Isolation</td><td><span class="check-no">&mdash;</span></td><td><span class="check-yes">&#10003;</span></td></tr>
+            <tr><td>Attack Graph Visualizer</td><td><span class="check-yes">&#10003;</span></td><td><span class="check-yes">&#10003;</span></td></tr>
+            <tr><td>SARIF 2.1.0 CI/CD Integration</td><td><span class="check-yes">&#10003;</span></td><td><span class="check-yes">&#10003;</span></td></tr>
+            <tr><td>100% Australian Sovereign Data</td><td><span class="check-yes">&#10003;</span></td><td><span class="check-yes">&#10003;</span></td></tr>
+            <tr><td>ASD Essential 8 &amp; APRA Compliance Reports</td><td><span class="check-yes">&#10003;</span></td><td><span class="check-yes">&#10003;</span></td></tr>
           </tbody>
         </table>
       </div>
