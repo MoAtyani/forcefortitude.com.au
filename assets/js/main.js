@@ -137,6 +137,65 @@ document.addEventListener('DOMContentLoaded', () => {
       openBookingModal(e);
     });
   });
+  calculateRisk();
 });
 
-console.log('[Force Fortitude] Loaded with Reliable Booking Modal');
+// Industry Solutions Tab Switching Controller
+function switchIndustryTab(tabId) {
+  document.querySelectorAll('.ind-tab-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.tab === tabId);
+  });
+  document.querySelectorAll('.ind-panel').forEach(panel => {
+    panel.classList.toggle('active', panel.id === `ind-panel-${tabId}`);
+  });
+}
+
+// Cyber Risk & ASD Essential 8 Exposure Calculator Logic
+let currentCalcSize = 'sm'; // 'sm', 'md', 'lg', 'ent'
+let currentCalcIndustry = 'finance';
+
+function setCalcSize(size, btnEl) {
+  currentCalcSize = size;
+  document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('active'));
+  if (btnEl) btnEl.classList.add('active');
+  calculateRisk();
+}
+
+function updateCalcIndustry(val) {
+  currentCalcIndustry = val;
+  calculateRisk();
+}
+
+function calculateRisk() {
+  const costEl = document.getElementById('calcCostDisplay');
+  const levelEl = document.getElementById('calcLevelDisplay');
+  const mandateEl = document.getElementById('calcMandateDisplay');
+  
+  if (!costEl || !levelEl) return;
+
+  const baseMap = {
+    sm: { cost: 185000, level: 'ASD Maturity Level 1', mandate: 'Privacy Act 1988 Compliance' },
+    md: { cost: 740000, level: 'ASD Maturity Level 2', mandate: 'ASD Essential 8 & Mandatory Breach Notice' },
+    lg: { cost: 2450000, level: 'ASD Maturity Level 2-3', mandate: 'ISO 27001 / APRA CPS 234 Alignment' },
+    ent: { cost: 4850000, level: 'ASD Maturity Level 3', mandate: 'Full ASD Essential 8 Level 3 & DISP' }
+  };
+
+  const industryMultiplier = {
+    finance: 1.5,
+    legal: 1.4,
+    health: 1.35,
+    defense: 1.6,
+    mining: 1.25,
+    retail: 1.15
+  };
+
+  const mult = industryMultiplier[currentCalcIndustry] || 1.2;
+  const data = baseMap[currentCalcSize] || baseMap.sm;
+  const finalCost = Math.round(data.cost * mult);
+
+  costEl.textContent = '$' + finalCost.toLocaleString('en-AU');
+  levelEl.textContent = data.level;
+  if (mandateEl) mandateEl.textContent = data.mandate;
+}
+
+console.log('[Force Fortitude] Loaded with Industry Hub & Risk Calculator Controllers');
