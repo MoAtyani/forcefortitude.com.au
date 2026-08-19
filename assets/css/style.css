@@ -4,11 +4,11 @@
 
 /* ---------- CSS Variables ---------- */
 :root {
-  --bg-primary: #050d1a;
-  --bg-secondary: #07111f;
-  --bg-card: #0a1628;
-  --bg-card-hover: #0d1f38;
-  --bg-terminal: #060e1c;
+  --bg-primary: #071325;
+  --bg-secondary: #0a1b33;
+  --bg-card: #0e2444;
+  --bg-card-hover: #122d54;
+  --bg-terminal: #09172c;
 
   --accent-cyan: #00f5ff;
   --accent-blue: #0066ff;
@@ -21,11 +21,11 @@
   --text-secondary: #94a3b8;
   --text-muted: #4a5568;
 
-  --border: rgba(0, 245, 255, 0.1);
-  --border-hover: rgba(0, 245, 255, 0.3);
+  --border: rgba(0, 245, 255, 0.15);
+  --border-hover: rgba(0, 245, 255, 0.35);
 
-  --glow-cyan: 0 0 30px rgba(0, 245, 255, 0.15);
-  --glow-blue: 0 0 30px rgba(0, 102, 255, 0.15);
+  --glow-cyan: 0 0 30px rgba(0, 245, 255, 0.2);
+  --glow-blue: 0 0 30px rgba(0, 102, 255, 0.25);
 
   --radius: 12px;
   --radius-lg: 20px;
@@ -876,9 +876,9 @@ ul { list-style: none; }
   position: fixed;
   inset: 0;
   z-index: 99999;
-  background: rgba(5, 13, 26, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(7, 19, 37, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -896,10 +896,10 @@ ul { list-style: none; }
   max-width: 920px;
   height: 90vh;
   max-height: 720px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-hover);
+  background: #0e2444;
+  border: 1px solid rgba(0, 245, 255, 0.35);
   border-radius: var(--radius-lg);
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.8), var(--glow-cyan);
+  box-shadow: 0 25px 80px rgba(0, 102, 255, 0.35), var(--glow-cyan);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -912,8 +912,8 @@ ul { list-style: none; }
 }
 .booking-modal-header {
   padding: 1rem 1.5rem;
-  background: var(--bg-secondary);
-  border-bottom: 1px solid var(--border);
+  background: #0a1b33;
+  border-bottom: 1px solid rgba(0, 245, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: space-between;
