@@ -1,4 +1,4 @@
-﻿// Force Fortitude - Main JS
+// Force Fortitude - Main JS
 
 // Navbar scroll effect
 const navbar = document.getElementById('navbar');
@@ -78,4 +78,23 @@ document.querySelectorAll('.service-card, .product-card, .why-point, .cta-stat')
   observer.observe(el);
 });
 
-console.log('[Force Fortitude] Loaded');
+// Cal.com Calendar Embed Integration
+(function (C, A, L) {
+  let p = function (a, ar) { a.q.push(ar); };
+  let int = C.Cal = C.Cal || function () {
+    let cal = int; int.q = int.q || [];
+    if (typeof cal.ns === "undefined") { cal.ns = {}; }
+    int.p = p; int.q.push(arguments);
+  };
+  if (!C.Cal) { C.Cal = int; }
+})(window, "https://app.cal.com/embed/embed.js", "init");
+
+Cal("init", { origin: "https://cal.com" });
+Cal("ui", {
+  "theme": "dark",
+  "styles": { "branding": { "brandColor": "#00f5ff" } },
+  "hideEventTypeDetails": false,
+  "layout": "month_view"
+});
+
+console.log('[Force Fortitude] Loaded with Cal.com integration');
