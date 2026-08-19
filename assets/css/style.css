@@ -951,6 +951,7 @@ ul { list-style: none; }
   height: 100%;
   border: none;
   background: #0a1628 !important;
+  filter: sepia(0.5) hue-rotate(175deg) saturate(3) brightness(0.85) contrast(1.15);
 }
 
 /* ---------- ANIMATIONS ---------- */
