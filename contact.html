@@ -155,16 +155,38 @@
 </footer>
 <script src="assets/js/main.js"></script>
 <script>
-function handleSubmit(e) {
+async function handleSubmit(e) {
   e.preventDefault();
+  const form = e.target;
   const btn = document.getElementById('submitBtn');
+  const msg = document.getElementById('formMsg');
+  
   btn.disabled = true;
-  btn.textContent = 'Sending...';
-  setTimeout(() => {
-    document.getElementById('formMsg').style.display = 'block';
-    btn.style.display = 'none';
-    document.getElementById('contactForm').reset();
-  }, 1200);
+  btn.textContent = 'Sending Message...';
+  
+  const formData = new FormData(form);
+  formData.append("_captcha", "false");
+  formData.append("_subject", "New Security Enquiry from ForceFortitude.com.au");
+
+  try {
+    const res = await fetch("https://formsubmit.co/ajax/mo@forcefortitude.com", {
+      method: "POST",
+      body: formData
+    });
+    if (res.ok) {
+      msg.style.display = 'block';
+      msg.innerHTML = '&#10003; Thank you! Your message has been sent to mo@forcefortitude.com. We will reply within one business day.';
+      btn.style.display = 'none';
+      form.reset();
+    } else {
+      throw new Error("Submission failed");
+    }
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = 'Send Message';
+    const bodyText = `Name: ${form.firstName.value} ${form.lastName.value}\nEmail: ${form.email.value}\nPhone: ${form.phone.value}\nCompany: ${form.company.value}\nService: ${form.service.value}\n\nMessage:\n${form.message.value}`;
+    window.location.href = `mailto:mo@forcefortitude.com?subject=New Enquiry from ${encodeURIComponent(form.firstName.value)}&body=${encodeURIComponent(bodyText)}`;
+  }
 }
 </script>
 </body>

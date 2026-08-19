@@ -91,7 +91,7 @@ function initBookingModal() {
             </div>
             <button class="booking-modal-close" onclick="closeBookingModal()" aria-label="Close modal">&times;</button>
           </div>
-          <div id="calEmbedDiv" style="width:100%;height:100%;min-height:560px;background:#0a1628;overflow:auto;"></div>
+          <iframe id="bookingIframe" class="booking-modal-iframe" src="" title="Cal.com Booking Calendar"></iframe>
         </div>
       </div>
     `;
@@ -99,40 +99,14 @@ function initBookingModal() {
   }
 }
 
-let calInitialized = false;
-
 function openBookingModal(e) {
   if (e) e.preventDefault();
   initBookingModal();
   const modal = document.getElementById('bookingModal');
+  const iframe = document.getElementById('bookingIframe');
   
-  if (!calInitialized) {
-    calInitialized = true;
-    (function (C, A, L) {
-      let p = function (a, ar) { a.q.push(ar); };
-      let int = C.Cal = C.Cal || function () {
-        let cal = int; int.q = int.q || [];
-        if (typeof cal.ns === "undefined") { cal.ns = {}; }
-        int.p = p; int.q.push(arguments);
-      };
-      if (!C.Cal) { C.Cal = int; }
-    })(window, "https://app.cal.com/embed/embed.js", "init");
-
-    Cal("init", { origin: "https://cal.com" });
-    Cal("inline", {
-      elementOrSelector: "#calEmbedDiv",
-      calLink: "mo-atyani-gvgwls",
-      config: { "layout": "month_view", "theme": "dark" }
-    });
-    Cal("ui", {
-      "theme": "dark",
-      "styles": {
-        "branding": { "brandColor": "#00f5ff" },
-        "body": { "background": "#0a1628" }
-      },
-      "hideEventTypeDetails": false,
-      "layout": "month_view"
-    });
+  if (iframe) {
+    iframe.src = "https://cal.com/mo-atyani-gvgwls?embed=true&theme=dark";
   }
 
   if (modal) {
@@ -165,4 +139,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-console.log('[Force Fortitude] Loaded with Cal Inline Popup Modal');
+console.log('[Force Fortitude] Loaded with Reliable Booking Modal');
