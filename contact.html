@@ -10,6 +10,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <link rel="icon" type="image/png" href="assets/images/logo.png"/>
   <link rel="stylesheet" href="assets/css/style.css"/>
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; int = C.Cal = C.Cal || function () { let cal = int; int.q = int.q || []; if (typeof cal.ns === "undefined") { cal.ns = {}; } int.p = p; int.q.push(arguments); }; if (!C.Cal) { C.Cal = int; } })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {origin:"https://cal.com"});
+    Cal("ui", {"theme":"dark","styles":{"branding":{"brandColor":"#00f5ff"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
   <style>
     .page-hero { padding: calc(var(--nav-height) + 5rem) 0 5rem; background: var(--bg-secondary); position: relative; overflow: hidden; }
     .page-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(0,245,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,245,255,0.03) 1px, transparent 1px); background-size: 60px 60px; }
@@ -99,10 +104,10 @@
             <strong style="color:var(--text-primary);display:block;font-size:0.95rem;margin-bottom:0.2rem;">Prefer a Live Meeting?</strong>
             <span style="color:var(--text-secondary);font-size:0.85rem;">Pick a date &amp; time on our live calendar for an instant Zoom consultation.</span>
           </div>
-          <button data-cal-link="mo-atyani-gvgwls" data-cal-namespace="" data-cal-config='{"layout":"month_view","theme":"dark"}' class="btn btn-primary" style="white-space:nowrap;">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <a href="https://cal.com/mo-atyani-gvgwls" target="_blank" data-cal-link="mo-atyani-gvgwls" data-cal-namespace="" data-cal-config='{"layout":"month_view","theme":"dark"}' class="btn btn-primary" style="white-space:nowrap;">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
             Book via Calendar
-          </button>
+          </a>
         </div>
 
         <h2>Send Us a Message</h2>
