@@ -78,23 +78,63 @@ document.querySelectorAll('.service-card, .product-card, .why-point, .cta-stat')
   observer.observe(el);
 });
 
-// Cal.com Calendar Embed Integration
-(function (C, A, L) {
-  let p = function (a, ar) { a.q.push(ar); };
-  let int = C.Cal = C.Cal || function () {
-    let cal = int; int.q = int.q || [];
-    if (typeof cal.ns === "undefined") { cal.ns = {}; }
-    int.p = p; int.q.push(arguments);
-  };
-  if (!C.Cal) { C.Cal = int; }
-})(window, "https://app.cal.com/embed/embed.js", "init");
+// Universal Booking Popup Modal Controller
+function initBookingModal() {
+  if (!document.getElementById('bookingModal')) {
+    const modalHtml = `
+      <div class="booking-modal-overlay" id="bookingModal" onclick="closeBookingModal(event)">
+        <div class="booking-modal-container" onclick="event.stopPropagation()">
+          <div class="booking-modal-header">
+            <div class="booking-modal-title">
+              <img src="assets/images/logo.png" alt="Force Fortitude" style="width:24px;height:24px;object-fit:contain;"/>
+              <span>Book a Free Security Assessment</span>
+            </div>
+            <button class="booking-modal-close" onclick="closeBookingModal()" aria-label="Close modal">&times;</button>
+          </div>
+          <iframe id="bookingIframe" class="booking-modal-iframe" src="" title="Cal.com Booking Calendar"></iframe>
+        </div>
+      </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', modalHtml);
+  }
+}
 
-Cal("init", { origin: "https://cal.com" });
-Cal("ui", {
-  "theme": "dark",
-  "styles": { "branding": { "brandColor": "#00f5ff" } },
-  "hideEventTypeDetails": false,
-  "layout": "month_view"
+function openBookingModal(e) {
+  if (e) e.preventDefault();
+  initBookingModal();
+  const modal = document.getElementById('bookingModal');
+  const iframe = document.getElementById('bookingIframe');
+  if (iframe && (!iframe.src || iframe.src === 'about:blank' || iframe.src === window.location.href)) {
+    iframe.src = "https://cal.com/mo-atyani-gvgwls?embed=true&theme=dark";
+  }
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeBookingModal(e) {
+  if (e && e.target !== e.currentTarget && !e.target.classList.contains('booking-modal-close')) return;
+  const modal = document.getElementById('bookingModal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeBookingModal();
 });
 
-console.log('[Force Fortitude] Loaded with Cal.com integration');
+// Auto-bind click handlers to all booking buttons
+document.addEventListener('DOMContentLoaded', () => {
+  initBookingModal();
+  document.querySelectorAll('[data-cal-link], .btn-book-modal').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      openBookingModal(e);
+    });
+  });
+});
+
+console.log('[Force Fortitude] Loaded with Popup Booking Modal');
